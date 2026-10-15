@@ -53,9 +53,16 @@ How it was made (about $5 total on fal):
    are kept and only sky and plaza were added.
 2. **Motion.** LTX-2.5 Pro image-to-video, 10 s, 1080p, static camera. The still is used as both the
    first and the last frame.
-3. **Drone star.** LTX kept spinning and warping the star, so `tools/video/composite.py` freezes it from
-   the clip's first frame. It then gives each drone light its own looping twinkle and crossfades the
-   clip's tail into its head, so the loop has no visible seam.
+3. **Drone show choreography.** LTX kept spinning and warping the star, so the formation is redone in code
+   with `tools/video/animate_star.py` (configs in `tools/video/cfg-*.json`):
+   - Each of the ~260 drone lights is lifted out of the first frame.
+   - The sky behind them is rebuilt from the real sky between the lights.
+   - Every light is re-rendered on an exact path. The star holds, then makes one smooth 3D turn on its
+     vertical axis, while the red and blue rings chase in opposite directions.
+   - The Missouri seal, its lettering and the pole stay in front of the drones.
+   - All motion repeats exactly once per loop, and the clip's tail crossfades into its head.
+
+   `composite.py` is the earlier version, which only freezes the star and twinkles it.
 4. **Web encodes.** VP9 WebM, with H.264 MP4 as a fallback: 1080p (1.0 MB), 720p and a vertical phone
    cut (0.3 MB). Each has a poster image.
 
