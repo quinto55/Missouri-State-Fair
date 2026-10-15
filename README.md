@@ -20,7 +20,7 @@ fair's review.
 
 | | |
 | --- | --- |
-| `index.html` | Home: countdown, 11-day "pick your day" rail, admission board, Grandstand, 2026 by the numbers |
+| `index.html` | Home: live drone-show hero, countdown, 11-day "pick your day" rail, admission board, Grandstand, 2026 by the numbers |
 | `tickets.html` | Admission, carnival wristbands, deals, Ham Breakfast, box office |
 | `events.html` | Grandstand lineup, filterable attractions, Parson Arena, schedules |
 | `plan.html` | Hours, gates, directions, parking, trams, camping, food, accessibility, policies |
@@ -30,6 +30,7 @@ fair's review.
 | `contact.html` | Phone and email directory, weather/safety alerts |
 | `assets/css/styles.css` | The whole "Show-Me Blue Ribbon" design system in one file |
 | `assets/js/main.js` | One deferred script: nav, countdown, today highlight, filters, FAQ search, .ics |
+| `assets/js/drone-show.js` | Home hero: GPU drone light show (raw WebGL, no libraries) |
 | `sw.js` + `manifest.webmanifest` | Installable PWA with offline fallback |
 
 ## Design
@@ -37,6 +38,28 @@ fair's review.
 - **Palette:** fair navy `#13325e`, Missouri red `#c8202f`, harvest gold `#f4b234`. Grand Champion purple `#5b2a86` is saved for the best-of-show moments.
 - **Type:** Barlow Condensed (OFL, self-hosted) for display, which echoes the fair's condensed masthead lettering. Body text uses the system font stack.
 - **Signatures:** prize-ribbon rosette and ribbon-tab cards, admission-stub buttons, and an 11-day rail. The Fair *is* eleven days, so the rail is how the schedule is presented.
+
+## The hero: a live drone show
+
+The 2026 Fair ended its Grandstand concerts with fireworks and a drone show, so the home page opens with one.
+About 2,200 drones (1,100 on phones) lift off from behind a lit fairground skyline. They fly a loop of
+formations, with fireworks between them:
+
+1. MISSOURI STATE FAIR
+2. A turning Ferris wheel whose gondolas hang level
+3. The state of Missouri with a gold star on Sedalia
+4. The 2027 dates
+5. A Grand Champion purple rosette lettered 1901
+
+How it works:
+
+- Text and shapes are drawn to an offscreen canvas and sampled into drone targets. The colors come from the drawing itself.
+- Drones are matched to their new targets in left-to-right order and launch in a wave, so the swarm sweeps across rather than tangling.
+- Every point is rendered in one additive-blend WebGL draw call.
+- Moving a cursor or finger through the swarm pushes drones aside.
+- It pauses when off-screen or in a background tab, and has a pause button and formation dots.
+- Visitors who prefer reduced motion get a still version of the date formation.
+- Without WebGL it falls back to lettering. The Missouri outline comes from public-domain US state boundaries.
 
 ## Technical
 

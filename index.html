@@ -60,6 +60,7 @@
 { "prerender": [{ "where": { "href_matches": "/*" }, "eagerness": "moderate" }] }
 </script>
 <script src="assets/js/main.js" defer></script>
+<script src="assets/js/drone-show.js" defer></script>
 </head>
 <body data-page="home">
 <a class="skip" href="#main">Skip to content</a>
@@ -100,14 +101,70 @@
 
 <main id="main">
 
-  <!-- ============ Hero ============ -->
-  <section class="hero on-dark" aria-labelledby="hero-title">
-    <div class="wrap">
-      <div>
+  <!-- ============ Hero: live drone show ============ -->
+  <section class="show-hero on-dark" aria-labelledby="hero-title">
+    <canvas id="drone-canvas" role="img" aria-label="Animated drone light show over the fairgrounds: thousands of lights spell Missouri State Fair, turn a Ferris wheel, map Missouri with a star on Sedalia, show the dates August 12 to 22, 2027, and form a purple prize ribbon."></canvas>
+    <div class="show-fallback" aria-hidden="true">
+      <p>Missouri <span>State Fair</span></p>
+    </div>
+
+    <svg class="skyline" viewBox="0 0 1440 200" overflow="visible" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
+      <defs>
+        <filter id="lampglow" x="-200%" y="-200%" width="500%" height="500%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        <linearGradient id="sil" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#08152c"/><stop offset="1" stop-color="#030815"/></linearGradient>
+      </defs>
+      <!-- Light beams from the Grandstand towers -->
+      <linearGradient id="beam" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#ffe7a8" stop-opacity=".28"/><stop offset="1" stop-color="#ffe7a8" stop-opacity="0"/></linearGradient>
+      <g class="beams" fill="url(#beam)">
+        <path d="M166 36 L120 -120 L200 -120 L176 36Z"/><path d="M296 28 L270 -120 L345 -120 L306 28Z"/>
+        <path d="M426 28 L400 -120 L470 -120 L436 28Z"/><path d="M554 36 L560 -120 L640 -120 L564 36Z"/>
+      </g>
+      <!-- Grandstand with light towers -->
+      <g fill="url(#sil)">
+        <path d="M120 200 V150 L150 112 H560 L590 150 V200Z"/>
+        <rect x="140" y="100" width="430" height="9" rx="2"/>
+        <rect x="168" y="38" width="5" height="70"/><rect x="298" y="30" width="5" height="78"/><rect x="428" y="30" width="5" height="78"/><rect x="556" y="38" width="5" height="70"/>
+      </g>
+      <g class="lamps" filter="url(#lampglow)" fill="#ffe7a8">
+        <rect x="157" y="30" width="27" height="10" rx="2"/><rect x="287" y="22" width="27" height="10" rx="2"/><rect x="417" y="22" width="27" height="10" rx="2"/><rect x="545" y="30" width="27" height="10" rx="2"/>
+      </g>
+      <!-- Main Gate arch -->
+      <g fill="url(#sil)">
+        <rect x="642" y="118" width="20" height="82" rx="3"/><rect x="778" y="118" width="20" height="82" rx="3"/>
+        <path d="M652 122 Q720 58 788 122" fill="none" stroke="#0a1a36" stroke-width="7"/>
+        <circle cx="720" cy="78" r="13"/>
+      </g>
+      <circle cx="720" cy="78" r="5" fill="#f4b234" opacity=".85" filter="url(#lampglow)"/>
+      <!-- Barns -->
+      <g fill="url(#sil)">
+        <path d="M850 200 V140 L905 108 L960 140 V200Z"/>
+        <path d="M975 200 V146 L1020 120 L1065 146 V200Z"/>
+      </g>
+      <g fill="#f4b234" opacity=".55"><rect x="880" y="160" width="8" height="10"/><rect x="922" y="160" width="8" height="10"/><rect x="1015" y="164" width="8" height="10"/></g>
+      <!-- Midway tents -->
+      <g fill="url(#sil)"><path d="M1080 200 V168 L1110 140 L1140 168 V200Z"/><path d="M1135 200 V174 L1160 150 L1185 174 V200Z"/></g>
+      <!-- Ferris wheel -->
+      <g fill="none" stroke="#0a1a36" stroke-width="5"><path d="M1262 200 L1310 104 L1358 200"/></g>
+      <g class="sky-wheel">
+        <circle cx="1310" cy="104" r="74" fill="none" stroke="#0a1a36" stroke-width="5"/>
+        <g stroke="#0a1a36" stroke-width="2.5">
+          <path d="M1236 104 H1384 M1310 30 V178 M1258 52 L1362 156 M1362 52 L1258 156"/>
+        </g>
+        <g class="wheel-bulbs" fill="#f4b234" filter="url(#lampglow)">
+          <circle cx="1384" cy="104" r="3"/><circle cx="1362" cy="156" r="3"/><circle cx="1310" cy="178" r="3"/><circle cx="1258" cy="156" r="3"/>
+          <circle cx="1236" cy="104" r="3"/><circle cx="1258" cy="52" r="3"/><circle cx="1310" cy="30" r="3"/><circle cx="1362" cy="52" r="3"/>
+        </g>
+      </g>
+      <rect x="0" y="194" width="1440" height="6" fill="#040b1c"/>
+    </svg>
+
+    <div class="show-copy wrap">
+      <div class="show-text">
         <p class="eyebrow">Sedalia’s summer tradition since 1901</p>
-        <h1 id="hero-title">Missouri State Fair <span class="accent">Show-Me Summer</span></h1>
-        <p class="date-lockup"><span class="d">Aug 12–22</span><span class="y">2027</span></p>
-        <p class="lede">Eleven days of blue-ribbon livestock, Grandstand concerts, the carnival midway and every fair food Missouri can fry — all at the historic fairgrounds in Sedalia.</p>
+        <h1 id="hero-title">Missouri State Fair <span class="accent">Aug 12–22, 2027</span></h1>
+        <p class="lede">Eleven days of blue-ribbon livestock, Grandstand concerts, the carnival midway and every fair food Missouri can fry.</p>
+      </div>
+      <div class="show-side">
         <div id="countdown" class="countdown" role="timer" aria-label="Countdown to opening day, August 12, 2027">
           <div><b data-days>—</b><small>days</small></div>
           <div><b data-hours>—</b><small>hrs</small></div>
@@ -118,27 +175,10 @@
           <a class="btn-ticket btn-gold" href="tickets.html">Get tickets</a>
           <a class="btn btn-ghost" href="plan.html">Plan your visit</a>
         </div>
-        <p class="small" style="margin-top:1rem"><a href="#" data-ics style="color:var(--gold-soft)">+ Add the 2027 Fair to your calendar</a></p>
-      </div>
-      <div class="hero-mosaic">
-        <img src="https://www.mostatefair.com/wp-content/uploads/img-livestock-shows-building-exhibitors.jpg" alt="A young exhibitor holds up purple Grand Champion ribbons in the show ring" width="600" height="315">
-        <img src="https://www.mostatefair.com/wp-content/uploads/2026-msf-carnival-ride.jpg" alt="Two kids in sunglasses cheering on a carnival ride" width="600" height="315">
-        <img src="https://www.mostatefair.com/wp-content/uploads/img-rodeo-v2.jpg" alt="A rider carries the American flag around the rodeo arena at dusk" width="600" height="315" loading="lazy">
-        <div class="rosette" aria-hidden="true">
-          <svg viewBox="0 0 132 170">
-            <path d="M44 84 L28 166 L46 152 L58 168 L66 90Z" fill="#46206a"/>
-            <path d="M88 84 L104 166 L86 152 L74 168 L66 90Z" fill="#46206a"/>
-            <g fill="#5b2a86">
-              <circle cx="66" cy="66" r="62"/>
-            </g>
-            <g fill="none" stroke="#7c4bb0" stroke-width="7" stroke-dasharray="6 5">
-              <circle cx="66" cy="66" r="55"/>
-            </g>
-            <circle cx="66" cy="66" r="42" fill="#fbf6ea"/>
-            <circle cx="66" cy="66" r="37" fill="none" stroke="#f4b234" stroke-width="2"/>
-            <text x="66" y="56" text-anchor="middle" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-weight="800" font-size="13" fill="#5b2a86" letter-spacing="1.5">SINCE</text>
-            <text x="66" y="83" text-anchor="middle" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-weight="800" font-size="28" fill="#13325e">1901</text>
-          </svg>
+        <div class="show-controls">
+          <button type="button" id="show-toggle" class="show-toggle" aria-pressed="true"><svg viewBox="0 0 16 16" aria-hidden="true"><path class="i-pause" d="M4 3h3v10H4zM9 3h3v10H9z"/><path class="i-play" d="M5 3l8 5-8 5z"/></svg><span>Pause show</span></button>
+          <div id="show-dots" class="show-dots" role="group" aria-label="Drone show formations"></div>
+          <p class="show-caption"><span id="show-caption">Missouri State Fair</span><span class="show-hint"> · move through the swarm</span></p>
         </div>
       </div>
     </div>
@@ -307,6 +347,7 @@
         <a class="btn-ticket" href="tickets.html">Get tickets</a>
         <a class="btn btn-ghost" style="color:#fff" href="contact.html#updates">Get Fair updates</a>
       </div>
+      <p class="small" style="margin:1rem 0 0"><a href="#" data-ics style="color:#fff">+ Add the 2027 Fair to your calendar</a></p>
     </div>
   </section>
 
