@@ -20,7 +20,7 @@ fair's review.
 
 | | |
 | --- | --- |
-| `index.html` | Home: live drone-show hero, countdown, 11-day "pick your day" rail, admission board, Grandstand, 2026 by the numbers |
+| `index.html` | Home: looping night-video hero, countdown, 11-day "pick your day" rail, admission board, Grandstand, 2026 by the numbers |
 | `tickets.html` | Admission, carnival wristbands, deals, Ham Breakfast, box office |
 | `events.html` | Grandstand lineup, filterable attractions, Parson Arena, schedules |
 | `plan.html` | Hours, gates, directions, parking, trams, camping, food, accessibility, policies |
@@ -30,7 +30,8 @@ fair's review.
 | `contact.html` | Phone and email directory, weather/safety alerts |
 | `assets/css/styles.css` | The whole "Show-Me Blue Ribbon" design system in one file |
 | `assets/js/main.js` | One deferred script: nav, countdown, today highlight, filters, FAQ search, .ics |
-| `assets/js/drone-show.js` | Home hero: GPU drone light show (raw WebGL, no libraries) |
+| `assets/video/` | Hero loops (WebM + MP4, desktop/720p/phone) and posters |
+| `tools/video/` | Composite/loop and QA scripts used to finish the hero video |
 | `sw.js` + `manifest.webmanifest` | Installable PWA with offline fallback |
 
 ## Design
@@ -39,27 +40,27 @@ fair's review.
 - **Type:** Barlow Condensed (OFL, self-hosted) for display, which echoes the fair's condensed masthead lettering. Body text uses the system font stack.
 - **Signatures:** prize-ribbon rosette and ribbon-tab cards, admission-stub buttons, and an 11-day rail. The Fair *is* eleven days, so the rail is how the schedule is presented.
 
-## The hero: a live drone show
+## The hero: night at the Main Gate
 
-The 2026 Fair ended its Grandstand concerts with fireworks and a drone show, so the home page opens with one.
-About 2,200 drones (1,100 on phones) lift off from behind a lit fairground skyline. They fly a loop of
-formations, with fireworks between them:
+The home page opens on a 9-second looping video of the fair's real Main Gate at night. The Ferris wheel
+turns, the midway lights chase, and a red, white and blue drone-show star twinkles overhead. The 2026 Fair's
+Grandstand concerts really did end with fireworks and a drone show.
 
-1. MISSOURI STATE FAIR
-2. A turning Ferris wheel whose gondolas hang level
-3. The state of Missouri with a gold star on Sedalia
-4. The 2027 dates
-5. A Grand Champion purple rosette lettered 1901
+How it was made (about $5 total on fal):
 
-How it works:
+1. **Night still.** The fair's own Main Gate photo was relit as a night scene with a drone star
+   (Nano Banana 2 Edit). For phones, the scene was outpainted to 9:16 (Bria Expand), so the original pixels
+   are kept and only sky and plaza were added.
+2. **Motion.** LTX-2.5 Pro image-to-video, 10 s, 1080p, static camera. The still is used as both the
+   first and the last frame.
+3. **Drone star.** LTX kept spinning and warping the star, so `tools/video/composite.py` freezes it from
+   the clip's first frame. It then gives each drone light its own looping twinkle and crossfades the
+   clip's tail into its head, so the loop has no visible seam.
+4. **Web encodes.** VP9 WebM, with H.264 MP4 as a fallback: 1080p (1.0 MB), 720p and a vertical phone
+   cut (0.3 MB). Each has a poster image.
 
-- Text and shapes are drawn to an offscreen canvas and sampled into drone targets. The colors come from the drawing itself.
-- Drones are matched to their new targets in left-to-right order and launch in a wave, so the swarm sweeps across rather than tangling.
-- Every point is rendered in one additive-blend WebGL draw call.
-- Moving a cursor or finger through the swarm pushes drones aside.
-- It pauses when off-screen or in a background tab, and has a pause button and formation dots.
-- Visitors who prefer reduced motion get a still version of the date formation.
-- Without WebGL it falls back to lettering. The Missouri outline comes from public-domain US state boundaries.
+The video starts only when motion is allowed. It pauses off-screen, has a pause button, and shows the
+still poster when reduced motion is preferred. Masters live in `_video/`, which is gitignored.
 
 ## Technical
 

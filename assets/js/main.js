@@ -183,6 +183,40 @@ if ("IntersectionObserver" in window && revealEls.length) {
   revealEls.forEach((el) => el.classList.add("in"));
 }
 
+/* ---------- Hero video: autoplay unless reduced motion, pause control ---------- */
+const heroVideo = $(".hero-video");
+if (heroVideo) {
+  const hero = heroVideo.closest(".show-hero");
+  const toggle = $("#hero-toggle");
+  const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const setState = (paused) => {
+    hero.classList.toggle("is-paused", paused);
+    if (toggle) {
+      toggle.setAttribute("aria-pressed", String(paused));
+      toggle.querySelector("span").textContent = paused ? "Play video" : "Pause video";
+    }
+  };
+  if (still) {
+    setState(true);
+  } else {
+    heroVideo.play().then(() => setState(false)).catch(() => setState(true));
+  }
+  if (toggle) {
+    toggle.addEventListener("click", () => {
+      if (heroVideo.paused) heroVideo.play().then(() => setState(false)).catch(() => {});
+      else { heroVideo.pause(); setState(true); }
+    });
+  }
+  // Save battery: pause while the hero is off-screen (unless the visitor paused it).
+  if ("IntersectionObserver" in window) {
+    new IntersectionObserver(([e]) => {
+      if (hero.classList.contains("is-paused")) return;
+      if (e.isIntersecting) heroVideo.play().catch(() => {});
+      else heroVideo.pause();
+    }).observe(hero);
+  }
+}
+
 /* ---------- Footer year ---------- */
 $$("[data-year]").forEach((el) => (el.textContent = new Date().getFullYear()));
 
