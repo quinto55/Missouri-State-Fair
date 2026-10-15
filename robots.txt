@@ -1,0 +1,4 @@
+# Redesign concept for the Missouri State Fair — not the official site.
+# Remove this block (and the per-page noindex meta) at real launch.
+User-agent: *
+Disallow: /
