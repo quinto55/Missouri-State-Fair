@@ -217,6 +217,41 @@ if (heroVideo) {
   }
 }
 
+/* ---------- Home: header floats over the hero, turns solid past it ---------- */
+const head = $(".site-head");
+if (head && document.body.dataset.page === "home") {
+  const heroEl = $(".show-hero");
+  const setH = () => document.documentElement.style.setProperty("--head-h", head.offsetHeight + "px");
+  setH();
+  addEventListener("resize", setH);
+  const onScroll = () => {
+    const limit = heroEl ? heroEl.offsetHeight - head.offsetHeight - 40 : 80;
+    head.classList.toggle("is-solid", scrollY > limit || (navList && navList.classList.contains("open")));
+  };
+  onScroll();
+  addEventListener("scroll", onScroll, { passive: true });
+  if (navToggle) navToggle.addEventListener("click", onScroll);
+}
+
+/* ---------- Count-up numbers (rosettes) ---------- */
+const counters = $$("[data-count]");
+if (counters.length && "IntersectionObserver" in window && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  const fmt = (el, v) => (el.dataset.prefix || "") + Math.round(v).toLocaleString("en-US") + (el.dataset.suffix || "");
+  const run = (el) => {
+    const target = +el.dataset.count, t0 = performance.now(), dur = 1400;
+    const step = (t) => {
+      const u = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - u, 3);
+      el.textContent = fmt(el, target * e);
+      if (u < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  };
+  const co = new IntersectionObserver((entries) => entries.forEach((en) => {
+    if (en.isIntersecting) { run(en.target); co.unobserve(en.target); }
+  }), { threshold: 0.6 });
+  counters.forEach((el) => { el.textContent = fmt(el, 0); co.observe(el); });
+}
+
 /* ---------- Footer year ---------- */
 $$("[data-year]").forEach((el) => (el.textContent = new Date().getFullYear()));
 

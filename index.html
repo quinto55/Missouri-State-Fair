@@ -79,7 +79,8 @@
 <header class="site-head">
   <div class="wrap">
     <a class="brand" href="./" aria-label="Missouri State Fair home">
-      <img src="https://www.mostatefair.com/wp-content/uploads/logo-2024-missouri-state-fair-full-hr.png" alt="Missouri State Fair" width="400" height="312">
+      <img class="logo-dark" src="https://www.mostatefair.com/wp-content/uploads/logo-2024-missouri-state-fair-full-hr.png" alt="Missouri State Fair" width="400" height="312">
+      <img class="logo-light" src="https://www.mostatefair.com/wp-content/uploads/logo-2024-missouri-state-fair-white-v2.png" alt="" width="150" height="48">
     </a>
     <p class="head-dates">Aug 12–22, 2027<small>Sedalia, Missouri</small></p>
     <nav class="site-nav" aria-label="Main">
@@ -113,7 +114,7 @@
 
     <div class="show-copy wrap">
       <div class="show-text">
-        <p class="eyebrow">Sedalia’s summer tradition since 1901</p>
+        <p class="script">See you in Sedalia</p>
         <h1 id="hero-title">Missouri State Fair <span class="accent">Aug 12–22, 2027</span></h1>
         <p class="lede">Eleven days of blue-ribbon livestock, Grandstand concerts, the carnival midway and every fair food Missouri can fry.</p>
       </div>
@@ -165,23 +166,30 @@
   <section class="soft" aria-labelledby="days-title">
     <div class="wrap">
       <div class="section-head">
-        <p class="eyebrow">Eleven days, one Fair</p>
+        <p class="script">Eleven days, one Fair</p>
         <h2 id="days-title">Pick your day</h2>
         <p class="season-note">2027 daily schedule announced closer to Fair time — day themes below follow the 2026 Fair</p>
       </div>
       <div class="rail-scroller" role="list" aria-label="Fair days, August 12 to 22, 2027">
-        <div class="day-card" role="listitem" data-date="2027-08-12"><span class="dow">Thu</span><span class="date">Aug 12</span><span class="tag"><b>Opening Day</b>Fair Queen crowned · first Grandstand show</span></div>
-        <div class="day-card" role="listitem" data-date="2027-08-13"><span class="dow">Fri</span><span class="date">Aug 13</span><span class="tag"><b>Sensory-friendly</b>Quiet midway, noon – 2 pm</span></div>
-        <div class="day-card is-weekend" role="listitem" data-date="2027-08-14"><span class="dow">Sat</span><span class="date">Aug 14</span><span class="tag"><b>First Saturday</b>Midway open till midnight</span></div>
-        <div class="day-card is-weekend" role="listitem" data-date="2027-08-15"><span class="dow">Sun</span><span class="date">Aug 15</span><span class="tag"><b>Military Appreciation</b>Truck &amp; tractor pulls in the Grandstand</span></div>
-        <div class="day-card" role="listitem" data-date="2027-08-16"><span class="dow">Mon</span><span class="date">Aug 16</span><span class="tag"><b>Lunch Bunch</b>Free lunch-hour admission, 11 am – 2 pm</span></div>
-        <div class="day-card" role="listitem" data-date="2027-08-17"><span class="dow">Tue</span><span class="date">Aug 17</span><span class="tag"><b>$2 Tuesday</b>Most rides $2 all day · Lunch Bunch</span></div>
-        <div class="day-card" role="listitem" data-date="2027-08-18"><span class="dow">Wed</span><span class="date">Aug 18</span><span class="tag"><b>Lunch Bunch</b>Bring the whole office out</span></div>
-        <div class="day-card" role="listitem" data-date="2027-08-19"><span class="dow">Thu</span><span class="date">Aug 19</span><span class="tag"><b>Ham Breakfast</b>Governor’s Ham Breakfast · Thrifty Thursday · Lunch Bunch</span></div>
-        <div class="day-card" role="listitem" data-date="2027-08-20"><span class="dow">Fri</span><span class="date">Aug 20</span><span class="tag"><b>Electric Co-op Day</b>Rural Missouri ride coupon</span></div>
-        <div class="day-card is-weekend" role="listitem" data-date="2027-08-21"><span class="dow">Sat</span><span class="date">Aug 21</span><span class="tag"><b>Sale of Champions</b>Best of Missouri sale · youth in agriculture</span></div>
-        <div class="day-card is-weekend" role="listitem" data-date="2027-08-22"><span class="dow">Sun</span><span class="date">Aug 22</span><span class="tag"><b>Fair Finale</b>Half-price ride wristbands · races</span></div>
+        <div class="day-card kind-event" role="listitem" data-date="2027-08-12"><span class="dow">Thu</span><span class="date">Aug 12</span><span class="tag"><b>Opening Day</b>Fair Queen crowned · first Grandstand show</span></div>
+        <div class="day-card kind-family" role="listitem" data-date="2027-08-13"><span class="dow">Fri</span><span class="date">Aug 13</span><span class="tag"><b>Sensory-friendly</b>Quiet midway, noon – 2 pm</span></div>
+        <div class="day-card is-weekend kind-weekend" role="listitem" data-date="2027-08-14"><span class="dow">Sat</span><span class="date">Aug 14</span><span class="tag"><b>First Saturday</b>Midway open till midnight</span></div>
+        <div class="day-card is-weekend kind-event" role="listitem" data-date="2027-08-15"><span class="dow">Sun</span><span class="date">Aug 15</span><span class="tag"><b>Military Appreciation</b>Truck &amp; tractor pulls in the Grandstand</span></div>
+        <div class="day-card kind-deal" role="listitem" data-date="2027-08-16"><span class="dow">Mon</span><span class="date">Aug 16</span><span class="tag"><b>Lunch Bunch</b>Free lunch-hour admission, 11 am – 2 pm</span></div>
+        <div class="day-card kind-deal" role="listitem" data-date="2027-08-17"><span class="dow">Tue</span><span class="date">Aug 17</span><span class="tag"><b>$2 Tuesday</b>Most rides $2 all day · Lunch Bunch</span></div>
+        <div class="day-card kind-deal" role="listitem" data-date="2027-08-18"><span class="dow">Wed</span><span class="date">Aug 18</span><span class="tag"><b>Lunch Bunch</b>Bring the whole office out</span></div>
+        <div class="day-card kind-ag" role="listitem" data-date="2027-08-19"><span class="dow">Thu</span><span class="date">Aug 19</span><span class="tag"><b>Ham Breakfast</b>Governor’s Ham Breakfast · Thrifty Thursday · Lunch Bunch</span></div>
+        <div class="day-card kind-deal" role="listitem" data-date="2027-08-20"><span class="dow">Fri</span><span class="date">Aug 20</span><span class="tag"><b>Electric Co-op Day</b>Rural Missouri ride coupon</span></div>
+        <div class="day-card is-weekend kind-ag" role="listitem" data-date="2027-08-21"><span class="dow">Sat</span><span class="date">Aug 21</span><span class="tag"><b>Sale of Champions</b>Best of Missouri sale · youth in agriculture</span></div>
+        <div class="day-card is-weekend kind-deal" role="listitem" data-date="2027-08-22"><span class="dow">Sun</span><span class="date">Aug 22</span><span class="tag"><b>Fair Finale</b>Half-price ride wristbands · races</span></div>
       </div>
+      <ul class="rail-legend" aria-label="Day types">
+        <li style="--c:#c98a0b">Deals &amp; specials</li>
+        <li style="--c:var(--red)">Big days</li>
+        <li style="--c:var(--purple)">Agriculture traditions</li>
+        <li style="--c:var(--ribbon-blue)">Family &amp; access</li>
+        <li style="--c:var(--navy)">Weekend</li>
+      </ul>
       <p class="rail-hint">Swipe or scroll the days → · Sale of Champions date confirmed for 2027.</p>
     </div>
   </section>
@@ -194,38 +202,44 @@
         <h2 id="adm-title">One gate ticket. A whole day of Fair.</h2>
         <p class="lede">Gate admission covers the barns, the buildings, free stage shows, demonstrations and family fun. Grandstand concerts and carnival rides are ticketed separately.</p>
         <p class="season-note">2026 gate prices shown · 2027 advance tickets on sale in July</p>
-        <div class="price-board" style="margin-top:0.4rem">
-          <div class="price"><div class="who">Adult</div><div class="amt">$15</div><div class="note">ages 13–59</div></div>
-          <div class="price"><div class="who">Senior</div><div class="amt">$10</div><div class="note">age 60+</div></div>
-          <div class="price"><div class="who">Youth</div><div class="amt">$4</div><div class="note">ages 6–12</div></div>
-          <div class="price"><div class="who">Kids</div><div class="amt">Free</div><div class="note">5 &amp; under</div></div>
+        <div class="letterboard" role="group" aria-label="Gate admission prices, 2026">
+          <p class="lb-title">Gate Admission</p>
+          <ul>
+            <li><span>Adult <small>13–59</small></span><i></i><b>$15</b></li>
+            <li><span>Senior <small>60+</small></span><i></i><b>$10</b></li>
+            <li><span>Youth <small>6–12</small></span><i></i><b>$4</b></li>
+            <li><span>Kids <small>5 &amp; under</small></span><i></i><b class="free">Free</b></li>
+          </ul>
+          <p class="lb-foot">Gates open 7:30 am daily</p>
         </div>
         <div class="btn-row">
           <a class="btn-ticket" href="tickets.html">All tickets &amp; deals</a>
           <a class="btn btn-ghost" href="tickets.html#deals">See ways to save</a>
         </div>
       </div>
-      <figure class="img-frame reveal" style="margin:0">
+      <figure class="img-frame offset reveal" style="margin:0">
         <img src="assets/img/photos/missouri-state-fair-main-gate.jpg" alt="The historic Main Gate arch of the Missouri State Fairgrounds on a sunny day" loading="lazy" width="1800" height="936">
-        <figcaption>The Main Gate on 16th Street — one of four ways onto the fairgrounds.</figcaption>
       </figure>
     </div>
   </section>
 
   <!-- ============ Grandstand ============ -->
-  <section class="soft" aria-labelledby="gs-title">
+  <section class="night" aria-labelledby="gs-title">
     <div class="wrap">
       <div class="section-head">
-        <p class="eyebrow">State Fair Grandstand</p>
+        <p class="script">Under the lights</p>
         <h2 id="gs-title">Big names under the August sky</h2>
         <p class="lede">Concerts, truck and tractor pulls and dirt-track racing — with fireworks and a drone show after select concerts.</p>
         <p class="season-note">2026 lineup recap · 2027 acts announced in the spring</p>
       </div>
+      <div class="marquee">
+      <p class="marquee-sign">★ Now showing · State Fair Grandstand ★</p>
       <div class="marquee-grid">
         <article class="show reveal"><img src="https://www.mostatefair.com/wp-content/uploads/lbt-montgomery-500x350-1.jpg" alt="Little Big Town with Walker Montgomery" loading="lazy" width="500" height="350"><div class="body"><p class="when">Sat · Aug 22, 2026</p><h3>Little Big Town</h3><p class="with">with Walker Montgomery</p></div></article>
         <article class="show reveal"><img src="https://www.mostatefair.com/wp-content/uploads/zimmerman-walters-500x350-1.jpg" alt="Bailey Zimmerman with Chandler Walters" loading="lazy" width="500" height="350"><div class="body"><p class="when">Thu · Aug 13, 2026</p><h3>Bailey Zimmerman</h3><p class="with">with Chandler Walters</p></div></article>
         <article class="show reveal"><img src="https://www.mostatefair.com/wp-content/uploads/rick-ross-ml-twista-yyt-500x350-v2.jpg" alt="Rick Ross with Ying Yang Twins, Twista and Murphy Lee" loading="lazy" width="500" height="350"><div class="body"><p class="when">Fri · Aug 21, 2026</p><h3>Rick Ross</h3><p class="with">with Ying Yang Twins, Twista &amp; Murphy Lee</p></div></article>
         <article class="show reveal"><img src="https://www.mostatefair.com/wp-content/uploads/skillet-500x350-v02.jpg" alt="Skillet with Tenth Avenue North" loading="lazy" width="500" height="350"><div class="body"><p class="when">Wed · Aug 19, 2026</p><h3>Skillet</h3><p class="with">with Tenth Avenue North</p></div></article>
+      </div>
       </div>
       <div class="btn-row"><a class="btn btn-ghost" href="events.html">Full Grandstand &amp; show guide</a></div>
     </div>
@@ -244,7 +258,7 @@
           <a class="card-link" href="about.html">Our history</a>
         </div>
       </div>
-      <figure class="img-frame reveal" style="margin:0">
+      <figure class="img-frame offset reveal" style="margin:0">
         <img src="assets/img/photos/img-livestock-show-judging-schedules.jpg" alt="Purple and blue Missouri State Fair prize ribbons laid on a table" loading="lazy" width="1800" height="945">
       </figure>
     </div>
@@ -254,14 +268,27 @@
   <section class="panel-navy on-dark" aria-labelledby="num-title">
     <div class="wrap">
       <div class="section-head center">
-        <p class="eyebrow">The 2026 Fair, “Show-Me Stars &amp; Stripes”</p>
-        <h2 id="num-title">By the numbers</h2>
+        <p class="script">A year to remember</p>
+        <h2 id="num-title">The 2026 Fair by the numbers</h2>
+        <p class="lede">“Show-Me Stars &amp; Stripes” — eleven days, blue ribbons all around.</p>
       </div>
-      <div class="stat-row">
-        <div class="stat reveal"><b>333,489</b><span>fairgoers through the gates</span></div>
-        <div class="stat reveal"><b>29,000+</b><span>livestock &amp; competitive exhibit entries</span></div>
-        <div class="stat reveal"><b>$385K+</b><span>raised for youth in agriculture</span></div>
-        <div class="stat reveal"><b>1,003</b><span>Youth in Ag scholarships since 1992</span></div>
+      <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <symbol id="rosette" viewBox="0 0 200 250">
+          <path d="M70 140 L40 245 L62 228 L80 248 L96 150Z" fill="currentColor"/>
+          <path d="M130 140 L160 245 L138 228 L120 248 L104 150Z" fill="currentColor"/>
+          <path d="M70 140 L40 245 L62 228 L80 248 L96 150Z M130 140 L160 245 L138 228 L120 248 L104 150Z" fill="#000" opacity=".22"/>
+          <circle cx="100" cy="100" r="88" fill="none" stroke="currentColor" stroke-width="22" stroke-dasharray="7 4"/>
+          <circle cx="100" cy="100" r="78" fill="currentColor"/>
+          <circle cx="100" cy="100" r="78" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="2" stroke-dasharray="3 3"/>
+          <circle cx="100" cy="100" r="60" fill="#fbf6ea"/>
+          <circle cx="100" cy="100" r="54" fill="none" stroke="#f4b234" stroke-width="2"/>
+        </symbol>
+      </svg>
+      <div class="rosette-row">
+        <div class="rosette-stat rb-purple reveal"><div class="rosette-art"><svg aria-hidden="true"><use href="#rosette"/></svg><div class="num"><b data-count="333489">333,489</b></div></div><p>fairgoers through the gates</p></div>
+        <div class="rosette-stat rb-blue reveal"><div class="rosette-art"><svg aria-hidden="true"><use href="#rosette"/></svg><div class="num"><b data-count="29000" data-suffix="+">29,000+</b></div></div><p>livestock &amp; competitive exhibit entries</p></div>
+        <div class="rosette-stat rb-red reveal"><div class="rosette-art"><svg aria-hidden="true"><use href="#rosette"/></svg><div class="num"><b data-count="385" data-prefix="$" data-suffix="K+">$385K+</b></div></div><p>raised for youth in agriculture</p></div>
+        <div class="rosette-stat rb-gold reveal"><div class="rosette-art"><svg aria-hidden="true"><use href="#rosette"/></svg><div class="num"><b data-count="1003">1,003</b></div></div><p>Youth in Ag scholarships since 1992</p></div>
       </div>
     </div>
   </section>
@@ -273,19 +300,30 @@
         <p class="eyebrow">Before you go</p>
         <h2 id="plan-title">Plan a better Fair day</h2>
       </div>
-      <div class="grid-3">
-        <article class="card photo-card reveal">
+      <div class="feature">
+        <a class="feature-main reveal" href="plan.html#camping">
           <img src="assets/img/photos/fair-time-first-come-camping.jpg" alt="Aerial view of RVs filling the State Fair campground" loading="lazy" width="1800" height="936">
-          <div class="body"><h3>Camp on the grounds</h3><p>A 60-acre campground on Clarendon Road with full hook-ups, showers and an underpass straight onto the fairgrounds.</p><a class="card-link" href="plan.html#camping">Camping details</a></div>
-        </article>
-        <article class="card photo-card reveal">
-          <img src="assets/img/photos/img-info-booth.jpg" alt="A State Fair information booth with visitors on scooters nearby" loading="lazy" width="1800" height="945">
-          <div class="body"><h3>Getting around</h3><p>Free trams from the parking lots, scooter and stroller rentals, and Information Centers across the grounds.</p><a class="card-link" href="plan.html#getting-around">Hours, maps &amp; parking</a></div>
-        </article>
-        <article class="card photo-card reveal">
-          <img src="https://www.mostatefair.com/wp-content/uploads/img-family-fun.jpg" alt="A smiling toddler and family enjoying the Fair" loading="lazy" width="600" height="315">
-          <div class="body"><h3>A Fair for everyone</h3><p>Two quiet Sensory &amp; Accessibility Resource Centers, a sensory-friendly midway, and an air-conditioned Family Fun Center.</p><a class="card-link" href="plan.html#accessibility">Accessibility</a></div>
-        </article>
+          <div class="feature-body">
+            <p class="script">Stay the week</p>
+            <h3>Camp right on the fairgrounds</h3>
+            <p>A 60-acre campground on Clarendon Road with full hook-ups, showers and an underpass straight onto the grounds.</p>
+            <span class="card-link">Camping details</span>
+          </div>
+        </a>
+        <div class="feature-side">
+          <a class="mini reveal" href="plan.html#getting-around">
+            <img src="assets/img/photos/img-info-booth.jpg" alt="" loading="lazy" width="1800" height="945">
+            <div><h3>Getting around</h3><p>Free trams from the lots, scooter and stroller rentals, Information Centers across the grounds.</p></div>
+          </a>
+          <a class="mini reveal" href="plan.html#accessibility">
+            <img src="https://www.mostatefair.com/wp-content/uploads/img-family-fun.jpg" alt="" loading="lazy" width="600" height="315">
+            <div><h3>A Fair for everyone</h3><p>Quiet Sensory &amp; Accessibility Resource Centers and a sensory-friendly midway.</p></div>
+          </a>
+          <a class="mini reveal" href="plan.html#food">
+            <img src="assets/img/photos/girl-with-ice-cream-600x315-1.jpg" alt="" loading="lazy" width="1800" height="945">
+            <div><h3>Come hungry</h3><p>Corn dogs, funnel cakes and every Fair favorite — plus Lunch Bunch weekdays.</p></div>
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -293,6 +331,7 @@
   <!-- ============ Closing ============ -->
   <section class="closing" aria-labelledby="close-title">
     <div class="wrap">
+      <p class="script" style="color:var(--gold-soft)">Mark your calendar</p>
       <h2 id="close-title">See you in Sedalia</h2>
       <p>August 12–22, 2027 · Gates open 7:30 am daily</p>
       <div class="btn-row">
@@ -306,7 +345,29 @@
 </main>
 
 <!-- SHARED:FOOTER -->
+<section class="partners" aria-label="Fair partners">
+  <div class="wrap">
+    <h4>Thank you to our Fair partners</h4>
+    <ul class="partner-row">
+        <li><img src="https://www.mostatefair.com/wp-content/uploads/ag-power-logo-150x75.jpg" alt="Ag-Power" loading="lazy" decoding="async"></li>
+        <li><img src="https://www.mostatefair.com/wp-content/uploads/break-time-logo-150x100.png" alt="Break Time" loading="lazy" decoding="async"></li>
+        <li><img src="https://www.mostatefair.com/wp-content/uploads/btc-bank-logo-2-150x69.png" alt="BTC Bank" loading="lazy" decoding="async"></li>
+        <li><img src="https://www.mostatefair.com/wp-content/uploads/budweiser-bowtie-logo-150x49.png" alt="Budweiser" loading="lazy" decoding="async"></li>
+        <li><img src="https://www.mostatefair.com/wp-content/uploads/cfm-logo-v2-150x83.png" alt="CFM" loading="lazy" decoding="async"></li>
+        <li><img src="https://www.mostatefair.com/wp-content/uploads/family-center-farm-home-logo-150x100.png" alt="Family Center Farm &amp; Home" loading="lazy" decoding="async"></li>
+        <li><img src="https://www.mostatefair.com/wp-content/uploads/gonetspeed-logo-1-150x33.png" alt="GoNetspeed" loading="lazy" decoding="async"></li>
+        <li><img src="https://www.mostatefair.com/wp-content/uploads/mainline-services-logo-150x77.png" alt="Mainline Services" loading="lazy" decoding="async"></li>
+        <li><img src="https://www.mostatefair.com/wp-content/uploads/visit-mo-logo-150x69.png" alt="Missouri Division of Tourism" loading="lazy" decoding="async"></li>
+        <li><img src="https://www.mostatefair.com/wp-content/uploads/missouri-st-logo-150x125.png" alt="Missouri S&amp;T" loading="lazy" decoding="async"></li>
+        <li><img src="https://www.mostatefair.com/wp-content/uploads/sedalia-democrat-logo-150x150.png" alt="Sedalia Democrat" loading="lazy" decoding="async"></li>
+        <li><img src="https://www.mostatefair.com/wp-content/uploads/sydenstricker-nobbe-logo-150x105.png" alt="Sydenstricker Nobbe Partners" loading="lazy" decoding="async"></li>
+        <li><img src="https://www.mostatefair.com/wp-content/uploads/buckle-up-phone-down-logo-150x150.png" alt="Buckle Up Phone Down (MoDOT)" loading="lazy" decoding="async"></li>
+    </ul>
+  </div>
+</section>
 <footer class="site-foot">
+  <svg class="foot-map" viewBox="-0.02 -0.02 1.04 0.93" aria-hidden="true" focusable="false"><path class="st" d="M0.5929 0.0011 L0.6086 0 L0.6391 0.039 L0.6557 0.0454 L0.6424 0.0728 L0.6441 0.1118 L0.6631 0.1709 L0.7093 0.2205 L0.7597 0.2617 L0.7696 0.325 L0.7812 0.3366 L0.7985 0.3187 L0.8315 0.3271 L0.853 0.3408 L0.8382 0.364 L0.8423 0.382 L0.8167 0.4316 L0.8159 0.4622 L0.8604 0.5012 L0.877 0.5265 L0.8935 0.5223 L0.9422 0.5634 L0.9422 0.593 L0.9546 0.6299 L0.9422 0.6426 L0.9761 0.6974 L1 0.6996 L0.9876 0.7776 L0.9653 0.7692 L0.9571 0.7935 L0.9472 0.7935 L0.9389 0.7935 L0.9397 0.8409 L0.91 0.8895 L0.8126 0.8895 L0.8365 0.8536 L0.8596 0.8304 L0.8464 0.7935 L0.1949 0.7924 L0.1734 0.7924 L0.1734 0.6964 L0.1742 0.2807 L0.142 0.2712 L0.1181 0.2258 L0.0991 0.2068 L0.1329 0.1509 L0.0842 0.1361 L0.0694 0.1182 L0.0322 0.0675 L0 0.0053 L0.1709 0.0084 L0.3782 0.0063 L0.5929 0.0011 Z" fill="#fff" fill-opacity="0.35"/><polygon class="star" points="0.3827,0.3331 0.3920,0.3554 0.4160,0.3573 0.3977,0.3730 0.4033,0.3964 0.3827,0.3838 0.3621,0.3964 0.3677,0.3730 0.3494,0.3573 0.3734,0.3554"/></svg>
+
   <div class="wrap">
     <div class="foot-grid">
       <div>

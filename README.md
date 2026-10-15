@@ -38,7 +38,16 @@ fair's review.
 
 - **Palette:** fair navy `#13325e`, Missouri red `#c8202f`, harvest gold `#f4b234`. Grand Champion purple `#5b2a86` is saved for the best-of-show moments.
 - **Type:** Barlow Condensed (OFL, self-hosted) for display, which echoes the fair's condensed masthead lettering. Body text uses the system font stack.
-- **Signatures:** prize-ribbon rosette and ribbon-tab cards, admission-stub buttons, and an 11-day rail. The Fair *is* eleven days, so the rail is how the schedule is presented.
+- **Second voice:** Yellowtail (OFL, self-hosted), a sign-painter script used only for short accents like "See you in Sedalia".
+- **Signatures:** these are fairground objects rather than generic cards.
+  - A **letterboard price sign** with felt grooves, a wood frame and white letters.
+  - The 11 days as **admission stubs** with a torn-stub edge, color-coded by day type.
+  - Stats on **prize rosettes**, with numbers that count up.
+  - The Grandstand lineup in a **chasing marquee-bulb frame**, inside a night section that carries on the hero's dusk.
+  - A **header that floats over the hero video** and turns solid once you scroll past it.
+  - An **editorial feature block** in place of a row of cards.
+  - A **partners strip**, and a faint Missouri outline with a Sedalia star in the footer.
+- **Photos:** the 20 images shown large were AI-upscaled 3× with Topaz Precision (faces at zero creativity) and stored in `assets/img/photos/`. Smaller card images are still hotlinked.
 
 ## The hero: night at the Main Gate
 
@@ -89,4 +98,4 @@ Pushing to `main` deploys to GitHub Pages through `.github/workflows/`.
 
 ## Font license
 
-Barlow Condensed (Jeremy Tribby) is self-hosted under the SIL Open Font License 1.1.
+Barlow Condensed (Jeremy Tribby) and Yellowtail (Astigmatic) are self-hosted under the SIL Open Font License 1.1.

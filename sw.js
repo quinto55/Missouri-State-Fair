@@ -2,7 +2,7 @@
    Pages: network-first (content stays fresh). Assets: cache-first (instant).
    Offline: falls back to cached pages, then offline.html. */
 
-const VERSION = "msf-v4";
+const VERSION = "msf-v5";
 const PRECACHE = [
   "./",
   "index.html",
@@ -19,6 +19,7 @@ const PRECACHE = [
   "assets/js/main.js",
   "assets/fonts/barlow-condensed-800.woff2",
   "assets/fonts/barlow-condensed-600.woff2",
+  "assets/fonts/yellowtail.woff2",
 ];
 
 self.addEventListener("install", (event) => {
