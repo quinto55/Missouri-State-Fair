@@ -2,7 +2,7 @@
    Pages: network-first (content stays fresh). Assets: cache-first (instant).
    Offline: falls back to cached pages, then offline.html. */
 
-const VERSION = "msf-v5";
+const VERSION = "msf-v6";
 const PRECACHE = [
   "./",
   "index.html",

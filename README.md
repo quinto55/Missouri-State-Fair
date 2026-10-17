@@ -52,7 +52,7 @@ fair's review.
 ## The hero: night at the Main Gate
 
 The home page opens on a 9-second looping video of the fair's real Main Gate at night. The Ferris wheel
-turns, the midway lights chase, and a red, white and blue drone-show star twinkles overhead. The 2026 Fair's
+turns, the midway lights chase, and a drone show draws the outline of Missouri, with a gold star on Sedalia, inside chasing red and blue rings. The 2026 Fair's
 Grandstand concerts really did end with fireworks and a drone show.
 
 How it was made (about $5 total on fal):
@@ -72,6 +72,12 @@ How it was made (about $5 total on fal):
    - All motion repeats exactly once per loop, and the clip's tail crossfades into its head.
 
    `composite.py` is the earlier version, which only freezes the star and twinkles it.
+
+   **Missouri, not Texas.** A lone star inside a circle reads as the Texas Lone Star, so the star was retired.
+   `tools/video/animate_mo.py` (configs `cfg-mo-*.json`) keeps the red and blue rings but removes the star
+   lights and draws the Missouri outline in drones instead (traced from the footer map), with a gold star on
+   Sedalia. Two comets of light run around the state line and the Sedalia star gently pulses. Run it from
+   the repo root so it can read the outline from `index.html`.
 4. **Web encodes.** VP9 WebM, with H.264 MP4 as a fallback: 1080p (1.0 MB), 720p and a vertical phone
    cut (0.3 MB). Each has a poster image.
 
